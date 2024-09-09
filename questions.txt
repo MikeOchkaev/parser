@@ -1,0 +1,8 @@
+Вопросы:
+1) группировать по deliveryAppointmentIdentifier?
+    или по deliveryLocationIdentifier?
+
+2) для каждого deliveryAppointmentIdentifier отдельный curl?
+
+3) запускать curl руками будем? (копипастить в консоль)
+    может сразу сделать скрипт, который будет выполнять запросы?
