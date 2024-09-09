@@ -1,0 +1,24 @@
+{
+  "deliveryAppointmentIdentifier": "",
+  "transportRequestFlowTypeIdentifier": 2,
+  "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
+  "shippingLocationIdentifier": "",
+  "deliveryLocationIdentifier": "",
+  "transportRequestFlowSubtype": null,
+  "requestOrderBindings": [
+    {
+      "orderIdentifier": "",
+      "orderUnloadingType": "back",
+      "orderPhytoCert": false,
+      "orderRollsPresence": false,
+      "orderTemperatureMode": null,
+      "slices": [
+        {
+          "sliceTotalReferenceUnit": 0,
+          "sliceGrossWeight": 0,
+          "slicePallets": 0
+        }
+      ]
+    }
+  ]
+}
