@@ -1,5 +1,4 @@
 .idea
 .venv
 
-questions.txt
-curls.txt
+./test_GroupingByKey_result.txt

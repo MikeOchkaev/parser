@@ -1,0 +1,148 @@
+curl -v -X 'POST' \
+  'expected_host' \
+  -H 'x-lmru-ldap: qwe' \
+  -H 'x-lmru-email: qwe' \
+  -H 'x-lmru-bu-id: qwe' \
+  -H 'x-lmru-location-id: qwe' \
+  -H 'x-lmru-role: super_admin' \
+  -H 'Content-Type: application/json' \
+  -d '[
+    {
+        "deliveryAppointmentIdentifier": [
+            "05676162",
+            "912",
+            "48"
+        ],
+        "transportRequestFlowTypeIdentifier": 2,
+        "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
+        "shippingLocationIdentifier": "912",
+        "deliveryLocationIdentifier": "48",
+        "transportRequestFlowSubtype": null,
+        "requestOrderBindings": [
+            {
+                "orderIdentifier": "45388914",
+                "orderUnloadingType": "back",
+                "orderPhytoCert": "false",
+                "orderRollsPresence": "false",
+                "orderTemperatureMode": null,
+                "slices": [
+                    {
+                        "sliceTotalReferenceUnit": 2.0,
+                        "sliceGrossWeight": 1.0,
+                        "slicePallets": 1
+                    }
+                ]
+            }
+        ]
+    }
+]'
+
+
+curl -v -X 'POST' \
+  'expected_host' \
+  -H 'x-lmru-ldap: qwe' \
+  -H 'x-lmru-email: qwe' \
+  -H 'x-lmru-bu-id: qwe' \
+  -H 'x-lmru-location-id: qwe' \
+  -H 'x-lmru-role: super_admin' \
+  -H 'Content-Type: application/json' \
+  -d '[
+    {
+        "deliveryAppointmentIdentifier": [
+            "05676162",
+            "912",
+            "57"
+        ],
+        "transportRequestFlowTypeIdentifier": 2,
+        "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
+        "shippingLocationIdentifier": "912",
+        "deliveryLocationIdentifier": "57",
+        "transportRequestFlowSubtype": null,
+        "requestOrderBindings": [
+            {
+                "orderIdentifier": "45389324",
+                "orderUnloadingType": "back",
+                "orderPhytoCert": "false",
+                "orderRollsPresence": "false",
+                "orderTemperatureMode": null,
+                "slices": [
+                    {
+                        "sliceTotalReferenceUnit": 2.0,
+                        "sliceGrossWeight": 1.0,
+                        "slicePallets": 1
+                    }
+                ]
+            },
+            {
+                "orderIdentifier": "45389524",
+                "orderUnloadingType": "back",
+                "orderPhytoCert": "false",
+                "orderRollsPresence": "false",
+                "orderTemperatureMode": null,
+                "slices": [
+                    {
+                        "sliceTotalReferenceUnit": 0.09,
+                        "sliceGrossWeight": 1.0,
+                        "slicePallets": 1
+                    }
+                ]
+            },
+            {
+                "orderIdentifier": "45389588",
+                "orderUnloadingType": "back",
+                "orderPhytoCert": "false",
+                "orderRollsPresence": "false",
+                "orderTemperatureMode": null,
+                "slices": [
+                    {
+                        "sliceTotalReferenceUnit": 0.09,
+                        "sliceGrossWeight": 1.0,
+                        "slicePallets": 1
+                    }
+                ]
+            }
+        ]
+    }
+]'
+
+
+curl -v -X 'POST' \
+  'expected_host' \
+  -H 'x-lmru-ldap: qwe' \
+  -H 'x-lmru-email: qwe' \
+  -H 'x-lmru-bu-id: qwe' \
+  -H 'x-lmru-location-id: qwe' \
+  -H 'x-lmru-role: super_admin' \
+  -H 'Content-Type: application/json' \
+  -d '[
+    {
+        "deliveryAppointmentIdentifier": [
+            "05676162",
+            "912",
+            "139"
+        ],
+        "transportRequestFlowTypeIdentifier": 2,
+        "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
+        "shippingLocationIdentifier": "912",
+        "deliveryLocationIdentifier": "139",
+        "transportRequestFlowSubtype": null,
+        "requestOrderBindings": [
+            {
+                "orderIdentifier": "45390225",
+                "orderUnloadingType": "back",
+                "orderPhytoCert": "false",
+                "orderRollsPresence": "false",
+                "orderTemperatureMode": null,
+                "slices": [
+                    {
+                        "sliceTotalReferenceUnit": 0.09,
+                        "sliceGrossWeight": 1.0,
+                        "slicePallets": 1
+                    }
+                ]
+            }
+        ]
+    }
+]'
+
+

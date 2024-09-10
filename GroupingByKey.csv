@@ -1,0 +1,6 @@
+deliveryAppointmentIdentifier;transportRequestFlowTypeIdentifier;transportRequestEarlyPickupDate;shippingLocationIdentifier;deliveryLocationIdentifier;transportRequestFlowSubtype;orderIdentifier;orderUnloadingType;orderPhytoCert;orderRollsPresence;orderTemperatureMode;sliceTotalReferenceUnit;sliceGrossWeigh;slicePallets
+05676162;2;11/09/2024 20:00:00;912;48;NULL;45388914;back;false;false;NULL;2;1;1
+05676162;2;11/09/2024 20:00:00;912;57;NULL;45389324;back;false;false;NULL;2;1;1
+05676162;2;11/09/2024 20:00:00;912;57;NULL;45389524;back;false;false;NULL;0,09;1;1
+05676162;2;11/09/2024 20:00:00;912;57;NULL;45389588;back;false;false;NULL;0,09;1;1
+05676162;2;11/09/2024 20:00:00;912;139;NULL;45390225;back;false;false;NULL;0,09;1;1
