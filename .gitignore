@@ -1,4 +1,4 @@
 .idea
 .venv
 
-./test_GroupingByKey_result.txt
+test_GroupingByKey_result.txt

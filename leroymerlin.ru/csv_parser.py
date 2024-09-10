@@ -105,7 +105,7 @@ class CSVParser:
                 if identifier in request_by_id:
                     json_object = request_by_id[identifier]
                 else:
-                    json_object = CSVParser.create_request(row, identifier)
+                    json_object = CSVParser.create_request(row, identifier[0])
                     request_by_id[identifier] = json_object
 
                 CSVParser.add_order_to_request(json_object, row)

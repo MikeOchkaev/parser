@@ -8,6 +8,7 @@ RESET = '\033[0m'
 
 class CSVParserTest(unittest.TestCase):
 
+    # must SUCCESS
     def test_grouping_by_key_SUCCESS(self):
         CSVParser.csv_to_curl(
             input_path='../GroupingByKey.csv',
@@ -17,13 +18,12 @@ class CSVParserTest(unittest.TestCase):
 
         with open('../ExpectedResultGroupingByKey.txt', 'r', encoding='utf-8') as expected, open(path_to_actual_result, 'r', encoding='utf-8') as actual:
             for line1, line2 in zip(expected, actual):
-                if line1 != line2:
-                    raise RuntimeError(f'{RED}Файлы не равны{RESET}')
+                self.assertEquals(line1, line2)
 
             print(f'\n{GREEN}Файлы равны{RESET}')
 
-    # should throw exception
-    def test_grouping_by_key_FAILURE(self):
+    # must FAIL
+    def test_grouping_by_key_FAIL(self):
         CSVParser.csv_to_curl(
             input_path='../GroupingByKey.csv',
             output_path=path_to_actual_result,
@@ -32,7 +32,4 @@ class CSVParserTest(unittest.TestCase):
 
         with open('../ExpectedResultGroupingByKey.txt', 'r', encoding='utf-8') as expected, open(path_to_actual_result, 'r', encoding='utf-8') as actual:
             for line1, line2 in zip(expected, actual):
-                if line1 != line2:
-                    raise RuntimeError(f'{RED}Файлы не равны{RESET}')
-
-            print(f'\n{GREEN}Файлы равны{RESET}')
+                self.assertEquals(line1, line2)

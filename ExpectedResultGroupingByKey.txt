@@ -8,11 +8,7 @@ curl -v -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '[
     {
-        "deliveryAppointmentIdentifier": [
-            "05676162",
-            "912",
-            "48"
-        ],
+        "deliveryAppointmentIdentifier": "05676162",
         "transportRequestFlowTypeIdentifier": 2,
         "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
         "shippingLocationIdentifier": "912",
@@ -48,11 +44,7 @@ curl -v -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '[
     {
-        "deliveryAppointmentIdentifier": [
-            "05676162",
-            "912",
-            "57"
-        ],
+        "deliveryAppointmentIdentifier": "05676162",
         "transportRequestFlowTypeIdentifier": 2,
         "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
         "shippingLocationIdentifier": "912",
@@ -116,11 +108,7 @@ curl -v -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '[
     {
-        "deliveryAppointmentIdentifier": [
-            "05676162",
-            "912",
-            "139"
-        ],
+        "deliveryAppointmentIdentifier": "05676162",
         "transportRequestFlowTypeIdentifier": 2,
         "transportRequestEarlyPickupDate": "2024-09-14T07:00:00.000Z",
         "shippingLocationIdentifier": "912",
