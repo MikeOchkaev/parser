@@ -1,6 +1,7 @@
 import csv
 import json
 import copy
+import requests
 import io
 from typing import Dict, Any
 import os
@@ -113,3 +114,29 @@ def csv_to_curl():
             curl = create_curl_command(json_request)
 
             outputfile.write(curl + '\n\n')
+
+
+def send_request(list_of_json: [str]):
+    headers = {
+        'x-lmru-ldap': ldap,
+        'x-lmru-email': email,
+        'x-lmru-bu-id': bu_id,
+        'x-lmru-location-id': loc_id,
+        'x-lmru-role': role,
+        'Content-Type': 'application/json'
+    }
+
+    success = [str]
+    failures = [str]
+
+    for json_body in list_of_json:
+        try:
+            response = requests.post(
+                url=api_url,
+                headers=headers,
+                json=json_body
+            )
+            success.append(f"Status: {response.status_code}, response body: {response.text}\n")
+        except requests.exceptions.RequestException as e:
+            print(f"Error: status code: {e.response.status_code}, message: {e.response.text}\n")
+            failures.append(f"Error: status code:  {e.response.status_code}, message: {e.response.text}\n")
