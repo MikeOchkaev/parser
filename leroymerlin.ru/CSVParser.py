@@ -41,17 +41,6 @@ order_binding_json: dict = {
         }
     ]
 }
-curl_template: str = """curl -X 'POST' \\
-  '{host}' \\
-  -H 'accept: application/json' \\
-  -H 'x-lmru-ldap: q' \\
-  -H 'x-lmru-email: q' \\
-  -H 'x-lmru-bu-id: q' \\
-  -H 'x-lmru-location-id: q' \\
-  -H 'x-lmru-role: super_admin' \\
-  -H 'Content-Type: application/json' \\
-  -d '{body}'
-"""
 
 
 def create_request(row, identifier):
@@ -87,14 +76,13 @@ def add_order_to_request(json_object, row):
 def create_curl_command(request_body: str) -> str:
     curl_command = io.StringIO()
 
-    curl_command.write("curl -X 'POST' \\\n")
+    curl_command.write("curl -v -X 'POST' \\\n")
     curl_command.write(f"  '{api_url}' \\\n")
-    curl_command.write("  -H 'accept: application/json' \\\n")
-    curl_command.write(f"  -H 'x-lmru-ldap: '{ldap}' \\\n")
-    curl_command.write(f"  -H 'x-lmru-email: '{email}' \\\n")
-    curl_command.write(f"  -H 'x-lmru-bu-id: '{bu_id}' \\\n")
-    curl_command.write(f"  -H 'x-lmru-location-id: '{loc_id}' \\\n")
-    curl_command.write(f"  -H 'x-lmru-role: '{role}' \\\n")
+    curl_command.write(f"  -H 'x-lmru-ldap: {ldap}' \\\n")
+    curl_command.write(f"  -H 'x-lmru-email: {email}' \\\n")
+    curl_command.write(f"  -H 'x-lmru-bu-id: {bu_id}' \\\n")
+    curl_command.write(f"  -H 'x-lmru-location-id: {loc_id}' \\\n")
+    curl_command.write(f"  -H 'x-lmru-role: {role}' \\\n")
     curl_command.write("  -H 'Content-Type: application/json' \\\n")
     curl_command.write(f"  -d '{request_body}'\n")
 
@@ -120,7 +108,7 @@ def csv_to_curl():
 
     with open(output_path, 'w', encoding='utf-8') as outputfile:
         for request in request_by_id.values():
-            json_request = json.dumps([request], ensure_ascii=False)
+            json_request = json.dumps([request], ensure_ascii=False, indent=4)
 
             curl = create_curl_command(json_request)
 
