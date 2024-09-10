@@ -43,7 +43,7 @@ order_binding_json: dict = {
 class CSVParser:
 
     @staticmethod
-    def create_request(row, identifier):
+    def __create_request(row, identifier):
         json_object = copy.deepcopy(transport_request_json)
 
         json_object["deliveryAppointmentIdentifier"] = identifier
@@ -54,7 +54,7 @@ class CSVParser:
         return json_object
 
     @staticmethod
-    def create_order_binding(row):
+    def __create_order_binding(row):
         json_object = copy.deepcopy(order_binding_json)
 
         json_object["orderIdentifier"] = row["orderIdentifier"]
@@ -69,11 +69,11 @@ class CSVParser:
 
     @staticmethod
     def add_order_to_request(json_object, row):
-        order_binding = CSVParser.create_order_binding(row)
+        order_binding = CSVParser.__create_order_binding(row)
         json_object["requestOrderBindings"].append(order_binding)
 
     @staticmethod
-    def create_curl_command(request_body: str, api_url) -> str:
+    def __create_curl_command(request_body: str, api_url) -> str:
         curl_command = io.StringIO()
 
         curl_command.write("curl -v -X 'POST' \\\n")
@@ -89,7 +89,7 @@ class CSVParser:
         return curl_command.getvalue()
 
     @staticmethod
-    def csv_to_curl(input_path, output_path, api_url):
+    def public_csv_to_curl(input_path, output_path, api_url):
         request_by_id: Dict[tuple[str, str, str], Any] = {}
 
         with open(input_path, newline='', encoding='utf-8') as csvfile:
@@ -105,7 +105,7 @@ class CSVParser:
                 if identifier in request_by_id:
                     json_object = request_by_id[identifier]
                 else:
-                    json_object = CSVParser.create_request(row, identifier[0])
+                    json_object = CSVParser.__create_request(row, identifier[0])
                     request_by_id[identifier] = json_object
 
                 CSVParser.add_order_to_request(json_object, row)
@@ -114,6 +114,6 @@ class CSVParser:
             for request in request_by_id.values():
                 json_request = json.dumps([request], ensure_ascii=False, indent=4)
 
-                curl = CSVParser.create_curl_command(json_request, api_url=api_url)
+                curl = CSVParser.__create_curl_command(json_request, api_url=api_url)
 
                 outputfile.write(curl + '\n\n')

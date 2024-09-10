@@ -10,7 +10,7 @@ class CSVParserTest(unittest.TestCase):
 
     # must SUCCESS
     def test_grouping_by_key_SUCCESS(self):
-        CSVParser.csv_to_curl(
+        CSVParser.public_csv_to_curl(
             input_path='../GroupingByKey.csv',
             output_path=path_to_actual_result,
             api_url='expected_host'
@@ -24,7 +24,7 @@ class CSVParserTest(unittest.TestCase):
 
     # must FAIL
     def test_grouping_by_key_FAIL(self):
-        CSVParser.csv_to_curl(
+        CSVParser.public_csv_to_curl(
             input_path='../GroupingByKey.csv',
             output_path=path_to_actual_result,
             api_url='unexpected_host'

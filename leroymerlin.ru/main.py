@@ -10,7 +10,7 @@ api_url = os.getenv('API_URL')
 
 # In order to start processing
 if __name__ == "__main__":
-    CSVParser.csv_to_curl(
+    CSVParser.public_csv_to_curl(
         input_path=input_path,
         output_path=output_path,
         api_url=api_url
